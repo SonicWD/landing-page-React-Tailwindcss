@@ -1,7 +1,7 @@
 /** @jsxImportSource react */
 import React from 'react';
 
-function Navbar() {
+function NavLinks() {
   return (
     <nav className="bg-zinc-800 text-white flex justify-center space-x-4 p-4">
       <h3>Inicio</h3>
@@ -12,4 +12,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavLinks;
