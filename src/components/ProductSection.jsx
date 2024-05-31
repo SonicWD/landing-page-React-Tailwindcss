@@ -1,5 +1,5 @@
 /** @jsxImportSource react */
-import React from 'react';
+//import React from 'react';
 import Product from './Product';
 
 function ProductSection() {

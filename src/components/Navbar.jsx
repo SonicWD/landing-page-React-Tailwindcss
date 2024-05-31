@@ -1,5 +1,5 @@
 /** @jsxImportSource react */
-import React from 'react';
+//import React from 'react';
 
 function Navbar() {
   return (
