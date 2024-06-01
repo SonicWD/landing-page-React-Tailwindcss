@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="font-sans box-border bg-zinc-100">
-      <Header />
       <Navbar />
       <NavLinks />
       <ProductSection />
