@@ -1,3 +1,4 @@
+/*primer footer*/
 .contenedor {
     display: flex;
     justify-content: center;
@@ -27,7 +28,7 @@
 .descripcion {
     margin-top: 0.5rem; /* Margen superior */
 }
-
+/*segundo footer*/
 .contenedor-image {
     display: flex;
     justify-content: space-around;
@@ -55,4 +56,53 @@
 .item p {
     margin-top: 10px;
     font-size: 14px;
+}
+
+/*tercer footer*/
+.contenedor-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    border-top: 2px solid #000;
+}
+
+.izquierda {
+    text-align: left;
+    color:white;
+}
+
+.izquierda h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.izquierda p {
+    margin: 5px 0 0 0;
+    font-style: italic;
+}
+
+.centro {
+    text-align: center;
+    flex-grow: 1;
+    color:white;
+}
+
+.derecha {
+    display: flex;
+    gap: 10px;
+    color:white;
+}
+
+.social-icon {
+    color: #F97316; /* Color naranja */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ffb74d; /* Color naranja claro */
 }
