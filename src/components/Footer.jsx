@@ -8,12 +8,12 @@ const Footer = () => {
   return (
     <footer className="flex justify-between items-center p-5 bg-black border-t-2 border-black">
         <div className="text-left text-white">
-            <h1 className="text-2xl font-bold">EL CEIBO</h1>
-            <p className="italic">¡Naturalmente, el mejor chocolate...!</p>
+            <h1 className="text-2xl font-bold">LA MORENITA</h1>
+            <p className="italic">¡El auténtico sabor de Baures!</p>
         </div>
         
         <div className="text-center flex-grow text-white">
-            <p>© Copyright 2024 EL CEIBO R.L. Todos los derechos reservados | La Paz - Bolivia.</p>
+            <p>© Copyright 2024 LA MORENITA Todos los derechos reservados | Trinidad - Bolivia.</p>
         </div>
         
         <div className="flex gap-2 text-white">
