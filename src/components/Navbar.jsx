@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
-import logo from "/src/images/logo2.jpg"; 
+import logo from "/src/images/logo/logo2.jpg"; 
 
 function Navbar() {
   // Define el estado isScrolled para controlar si el usuario ha hecho scroll

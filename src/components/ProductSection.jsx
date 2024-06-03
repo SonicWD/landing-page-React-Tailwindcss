@@ -11,7 +11,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Componente reutilizable para representar cada diapositiva del carrusel.
 const Slide = ({ imageSrc, alt, text1, text2, text3 }) => (
   <div className="h-screen relative">
     <img src={imageSrc} alt={alt} className="w-full h-full object-cover" />
@@ -28,20 +27,14 @@ const Slide = ({ imageSrc, alt, text1, text2, text3 }) => (
   </div>
 );
 
-
-
-
 Slide.propTypes = {
   imageSrc: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   text1: PropTypes.string.isRequired, 
   text2: PropTypes.string.isRequired,
   text3: PropTypes.string.isRequired,
-
 };
 
-
-// Componente reutilizable para los botones de navegación.
 const ArrowButton = ({ direction, onClick }) => (
   <button
     className={`absolute top-1/2 ${
@@ -53,28 +46,31 @@ const ArrowButton = ({ direction, onClick }) => (
   </button>
 );
 
-// Componente principal del carrusel.
+ArrowButton.propTypes = {
+  direction: PropTypes.oneOf(["next", "prev"]).isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
 const MySlider = () => {
-  // Utilizamos useRef para crear una referencia mutable que apunta al componente Slider.
   const sliderRef = useRef();
-  const [currentText, setCurrentText] = useState({});
 
   const slidesData = [
     {
-      imageSrc: "/src/images/slider3.jpg",
+      imageSrc: "/src/images/slider/slider3.jpg",
       alt: "Slide 1",
       text1: "El sabor más puro",
       text2: "los ingredientes más",
       text3: "selectos",
     },
     {
-      imageSrc: "/src/images/slider2.jpg",
+      imageSrc: "/src/images/slider/slider2.jpg",
       alt: "Slide 2",
       text1: "Ingredientes naturales",
       text2: "sabor excepcional",
       text3: "",
     },
   ];
+
   const restartAnimation = () => {
     const animatedTextElements = document.querySelectorAll(".animated-text");
     animatedTextElements.forEach((element) => {
@@ -84,10 +80,10 @@ const MySlider = () => {
     });
   };
 
-  const handleAfterChange = (currentSlide) => {
+  const handleAfterChange = () => {
     restartAnimation();
-    setCurrentText(slidesData[currentSlide]);
   };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -101,7 +97,6 @@ const MySlider = () => {
     afterChange: handleAfterChange,
   };
 
-  // Estructura del componente del carrusel.
   return (
     <div>
       <Slider {...settings} ref={sliderRef}>
@@ -113,7 +108,6 @@ const MySlider = () => {
             text1={slide.text1}
             text2={slide.text2}
             text3={slide.text3}
-
           />
         ))}
       </Slider>
@@ -121,17 +115,4 @@ const MySlider = () => {
   );
 };
 
-// Propiedades esperadas para los componentes NextArrow y PrevArrow.
-ArrowButton.propTypes = {
-  direction: PropTypes.oneOf(["next", "prev"]).isRequired,
-  onClick: PropTypes.func.isRequired,
-};
-
-// Propiedades esperadas para el componente Slide.
-Slide.propTypes = {
-  imageSrc: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-};
-
-// Exportamos el componente MySlider para su uso en otras partes de la aplicación.
 export default MySlider;
