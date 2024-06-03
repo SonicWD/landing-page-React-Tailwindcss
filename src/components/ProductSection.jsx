@@ -5,22 +5,41 @@
 // También importamos el componente Slider de react-slick para crear el carrusel y los estilos asociados.
 
 // eslint-disable-next-line no-unused-vars
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Componente reutilizable para representar cada diapositiva del carrusel.
-const Slide = ({ imageSrc, alt }) => (
-  <div className="h-screen">
-    <img
-      src={imageSrc}
-      alt={alt}
-      className="w-full h-full object-cover"
-    />
+const Slide = ({ imageSrc, alt, text1, text2, text3 }) => (
+  <div className="h-screen relative">
+    <img src={imageSrc} alt={alt} className="w-full h-full object-cover" />
+    <div className="absolute inset-0 flex justify-center items-center text-white text-lg px-4 py-2">
+      <div className="absolute top-1/2 left-1/4 transform -translate-y-1/2 pl-8" style={{marginLeft: "-90px"}}>
+        <div className="animated-text slide-left" style={{ fontFamily: 'Dancing Script', color: '#FFFFFF', fontSize: '40px', padding: '10px' }}>{text1}</div>
+        <div className="animated-text slide-left delay-500" style={{ fontFamily: 'Rubik Mono One', color: '#FFFFFF', fontSize: '40px', padding: '10px' }}>{text2}</div>
+        <div className="animated-text slide-left delay-1000" style={{ fontFamily: 'Rubik Mono One', color: '#FFFFFF', fontSize: '40px', padding: '10px' }}>{text3}</div>
+        <button className="mt-8 bg-transparent border border-white text-white px-4 py-2 hover:bg-white hover:text-black transition duration-300 animated-button slide-up">
+          Ver Catálogo
+        </button>
+      </div>
+    </div>
   </div>
 );
+
+
+
+
+Slide.propTypes = {
+  imageSrc: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  text1: PropTypes.string.isRequired, 
+  text2: PropTypes.string.isRequired,
+  text3: PropTypes.string.isRequired,
+
+};
+
 
 // Componente reutilizable para los botones de navegación.
 const ArrowButton = ({ direction, onClick }) => (
@@ -38,8 +57,37 @@ const ArrowButton = ({ direction, onClick }) => (
 const MySlider = () => {
   // Utilizamos useRef para crear una referencia mutable que apunta al componente Slider.
   const sliderRef = useRef();
+  const [currentText, setCurrentText] = useState({});
 
-  // Configuración del carrusel.
+  const slidesData = [
+    {
+      imageSrc: "/src/images/slider3.jpg",
+      alt: "Slide 1",
+      text1: "El sabor más puro",
+      text2: "los ingredientes más",
+      text3: "selectos",
+    },
+    {
+      imageSrc: "/src/images/slider2.jpg",
+      alt: "Slide 2",
+      text1: "Ingredientes naturales",
+      text2: "sabor excepcional",
+      text3: "",
+    },
+  ];
+  const restartAnimation = () => {
+    const animatedTextElements = document.querySelectorAll(".animated-text");
+    animatedTextElements.forEach((element) => {
+      element.style.animation = "none";
+      element.offsetHeight; /* trigger reflow */
+      element.style.animation = null;
+    });
+  };
+
+  const handleAfterChange = (currentSlide) => {
+    restartAnimation();
+    setCurrentText(slidesData[currentSlide]);
+  };
   const settings = {
     dots: true,
     infinite: true,
@@ -48,18 +96,26 @@ const MySlider = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    nextArrow: <ArrowButton direction="next" />,
-    prevArrow: <ArrowButton direction="prev" />,
+    nextArrow: <ArrowButton direction="next" onClick={() => sliderRef.current.slickNext()} />,
+    prevArrow: <ArrowButton direction="prev" onClick={() => sliderRef.current.slickPrev()} />,
+    afterChange: handleAfterChange,
   };
 
   // Estructura del componente del carrusel.
   return (
     <div>
-      {/* Renderizamos el componente Slider con la configuración y la referencia. */}
       <Slider {...settings} ref={sliderRef}>
-        {/* Cada Slide representa una diapositiva del carrusel. */}
-        <Slide imageSrc="/src/images/slider3.jpg" alt="Slide 1" />
-        <Slide imageSrc="/src/images/slider2.jpg" alt="Slide 2" />
+        {slidesData.map((slide, index) => (
+          <Slide
+            key={index}
+            imageSrc={slide.imageSrc}
+            alt={slide.alt}
+            text1={slide.text1}
+            text2={slide.text2}
+            text3={slide.text3}
+
+          />
+        ))}
       </Slider>
     </div>
   );
