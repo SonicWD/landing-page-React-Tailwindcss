@@ -40,17 +40,7 @@ ImageWithHoverText.propTypes = {
 const News = () => {
   return (
     <div className="flex h-screen">
-      {/* Panel izquierdo con texto */}
-      <div className={`w-1/2 ${bgColor} text-white flex flex-col justify-center items-center`}>
-        <div className="animated-text slide-left" style={{ fontFamily: fontPrimary, color: primaryColor, fontSize: fontSizeLarge }}>
-          El auténtico sabor de Baures
-        </div>
-        <div className="animated-text slide-left delay-500" style={{ fontFamily: fontSecondary, color: secondaryColor, fontSize: fontSizeMedium }}>
-          en cada bocado
-        </div>
-      </div>
-
-      {/* Panel derecho con imágenes */}
+      {/* Panel izquierdo con imágenes */}
       <div className="w-1/2 flex flex-col">
         <div className="w-full h-1/2 flex">
           <ImageWithHoverText src="/src/images/news/news1.jpg" alt="Imagen 1" text="Del árbol" />
@@ -59,6 +49,16 @@ const News = () => {
         <div className="w-full h-1/2 flex">
           <ImageWithHoverText src="/src/images/news/news3.jpg" alt="Imagen 3" text="todo hecho a mano" />
           <ImageWithHoverText src="/src/images/news/news4.jpg" alt="Imagen 4" text="y con amor" />
+        </div>
+      </div>
+
+      {/* Panel derecho con texto */}
+      <div className={`w-1/2 ${bgColor} text-white flex flex-col justify-center items-center`}>
+        <div className="animated-text slide-left" style={{ fontFamily: fontPrimary, color: primaryColor, fontSize: fontSizeLarge }}>
+          El auténtico sabor de Baures
+        </div>
+        <div className="animated-text slide-left delay-500" style={{ fontFamily: fontSecondary, color: secondaryColor, fontSize: fontSizeMedium }}>
+          en cada bocado
         </div>
       </div>
     </div>
