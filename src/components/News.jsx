@@ -9,7 +9,7 @@ const primaryColor = '#ca8e46'; // Color primario
 const secondaryColor = '#FFFFFF'; // Color secundario
 const bgColor = 'bg-black'; // Clase de Tailwind para el color de fondo negro
 const hoverBgColor = '#ca8e46'; // Color de fondo al hacer hover
-const hoverOpacity = 'bg-opacity-50'; // Opacidad del fondo al hacer hover
+const hoverOpacity = '0.5'; // Opacidad del fondo al hacer hover
 const fontSizeLarge = '60px'; // Tamaño de fuente grande
 const fontSizeMedium = '40px'; // Tamaño de fuente mediano
 const fontSizeHover = '2rem'; // Tamaño de fuente para el texto en hover
@@ -19,16 +19,31 @@ const ImageWithHoverText = ({ src, alt, text }) => (
   <div className="relative w-1/2 h-full bg-gray-300">
     {/* Imagen */}
     <img src={src} alt={alt} className="w-full h-full object-cover" />
-    {/* Texto que aparece al hacer hover */}
-    <div
-      className={`absolute inset-0 flex items-center justify-center bg-[${hoverBgColor}] ${hoverOpacity} text-white opacity-0 hover:opacity-100 transition-opacity duration-300`}
-      style={{ fontFamily: fontPrimary, fontSize: fontSizeHover }}
-    >
-      {text}
+    {/* Contenedor para el fondo y el texto */}
+    <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+      {/* Fondo que se vuelve opaco al hacer hover */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundColor: hoverBgColor,
+          opacity: hoverOpacity,
+          transition: 'opacity 0.3s',
+        }}
+      ></div>
+      {/* Texto que aparece al hacer hover */}
+      <div
+        className="relative"
+        style={{
+          fontFamily: fontPrimary,
+          fontSize: fontSizeHover,
+          color: 'white',
+        }}
+      >
+        {text}
+      </div>
     </div>
   </div>
 );
-
 // Validación de propiedades del componente ImageWithHoverText
 ImageWithHoverText.propTypes = {
   src: PropTypes.string.isRequired, // La propiedad src es obligatoria y debe ser una cadena
