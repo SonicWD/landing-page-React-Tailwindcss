@@ -38,17 +38,19 @@ ImageWithHoverText.propTypes = {
 
 const Form = () => {
   return (
-    <div className="flex flex-col md:flex-row h-screen">
+    <div className="flex flex-col md:flex-row md:h-screen">
       {/* Panel izquierdo con texto */}
       <div className={`w-full md:w-1/2 ${bgColor} text-white flex flex-col justify-center items-center p-4 md:p-0`}>
-        <div className="animated-text slide-left" style={{ fontFamily: fontPrimary, color: primaryColor, fontSize: fontSizeLarge }}>
-          ¿En qué te podemos
-        </div>
-        <div className="animated-text slide-left delay-500" style={{ fontFamily: fontSecondary, color: secondaryColor, fontSize: fontSizeMedium }}>
-          ayudar?
+        <div className="flex flex-col justify-center items-center text-center">
+          <div className="animated-text slide-left" style={{ fontFamily: fontPrimary, color: primaryColor, fontSize: fontSizeLarge }}>
+            ¿En qué te podemos
+          </div>
+          <div className="animated-text slide-left delay-500" style={{ fontFamily: fontSecondary, color: secondaryColor, fontSize: fontSizeMedium }}>
+            ayudar?
+          </div>
         </div>
       </div>
-
+  
       {/* Panel derecho con formulario */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-black p-4 md:p-0">
         <form className="w-full max-w-sm bg-white rounded-lg p-6">
@@ -71,5 +73,5 @@ const Form = () => {
   );
 };
 
-// Exportación del componente Gorm
+// Exportación del componente Form
 export default Form;

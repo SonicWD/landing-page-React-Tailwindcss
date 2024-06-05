@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import logo from "/src/images/logo/logo2.jpg"; 
 
@@ -128,3 +129,4 @@ function redirectToWhatsApp() {
 }
 
 export default Navbar;
+

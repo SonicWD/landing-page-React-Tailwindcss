@@ -31,4 +31,6 @@
   .animated-button {
     animation: slideInUp 3s forwards;
   }
-  
+  .small-text {
+    font-size: 20px;
+  }
