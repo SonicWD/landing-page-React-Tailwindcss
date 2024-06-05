@@ -5,6 +5,8 @@ import Form from "./components/Form";
 import Footer from "./components/Footer";
 import Atention from "./components/Atention";
 import Certificates from "./components/Certificates";
+import Maps from "./components/Maps"
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <ProductSection />
         <News />
         <Form />
+        <Maps />
         <Atention />
         <Certificates />
         <Footer />
