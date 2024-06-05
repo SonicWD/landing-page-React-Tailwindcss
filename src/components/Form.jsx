@@ -16,7 +16,7 @@ const fontSizeHover = '2rem'; // Tamaño de fuente para el texto en hover
 
 // Componente que renderiza una imagen con texto superpuesto al hacer hover
 const ImageWithHoverText = ({ src, alt, text }) => (
-  <div className="relative w-1/2 h-full bg-gray-300">
+  <div className="relative w-full md:w-1/2 h-64 md:h-full bg-gray-300">
     {/* Imagen */}
     <img src={src} alt={alt} className="w-full h-full object-cover" />
     {/* Texto que aparece al hacer hover */}
@@ -36,41 +36,40 @@ ImageWithHoverText.propTypes = {
   text: PropTypes.string.isRequired, // La propiedad text es obligatoria y debe ser una cadena
 };
 
-// Componente principal que representa la sección de noticias
-const News = () => {
+const Form = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col md:flex-row h-screen">
       {/* Panel izquierdo con texto */}
-      <div className={`w-1/2 ${bgColor} text-white flex flex-col justify-center items-center`}>
+      <div className={`w-full md:w-1/2 ${bgColor} text-white flex flex-col justify-center items-center p-4 md:p-0`}>
         <div className="animated-text slide-left" style={{ fontFamily: fontPrimary, color: primaryColor, fontSize: fontSizeLarge }}>
-        ¿En qué te podemos
+          ¿En qué te podemos
         </div>
         <div className="animated-text slide-left delay-500" style={{ fontFamily: fontSecondary, color: secondaryColor, fontSize: fontSizeMedium }}>
-        ayudar?
+          ayudar?
         </div>
       </div>
 
       {/* Panel derecho con formulario */}
-      <div className="w-1/2 flex flex-col justify-center items-center bg-black">
-      <form className="w-full max-w-sm bg-white rounded-lg p-6">
-            <div className="mb-6">
-              <label htmlFor="name" className="block text-gray-800 text-sm font-semibold mb-2">Nombre:</label>
-              <input type="text" id="name" name="name" className="block w-full bg-gray-200 border border-gray-300 rounded-md py-2 px-4" />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="email" className="block text-gray-800 text-sm font-semibold mb-2">Correo electrónico:</label>
-              <input type="email" id="email" name="email" className="block w-full bg-gray-200 border border-gray-300 rounded-md py-2 px-4" />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="message" className="block text-gray-800 text-sm font-semibold mb-2">Mensaje:</label>
-              <textarea id="message" name="message" rows="4" className="block w-full bg-gray-200 border border-gray-300 rounded-md py-2 px-4"></textarea>
-            </div>
-            <button type="submit" className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-yellow-600 transition-colors duration-300">Enviar</button>
-          </form>
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-black p-4 md:p-0">
+        <form className="w-full max-w-sm bg-white rounded-lg p-6">
+          <div className="mb-6">
+            <label htmlFor="name" className="block text-gray-800 text-sm font-semibold mb-2">Nombre:</label>
+            <input type="text" id="name" name="name" className="block w-full bg-gray-200 border border-gray-300 rounded-md py-2 px-4" />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="email" className="block text-gray-800 text-sm font-semibold mb-2">Correo electrónico:</label>
+            <input type="email" id="email" name="email" className="block w-full bg-gray-200 border border-gray-300 rounded-md py-2 px-4" />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="message" className="block text-gray-800 text-sm font-semibold mb-2">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" className="block w-full bg-gray-200 border border-gray-300 rounded-md py-2 px-4"></textarea>
+          </div>
+          <button type="submit" className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-yellow-600 transition-colors duration-300">Enviar</button>
+        </form>
       </div>
     </div>
   );
 };
 
-// Exportación del componente News
-export default News;
+// Exportación del componente Gorm
+export default Form;

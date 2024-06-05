@@ -6,17 +6,17 @@ import { faRss } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
-    <footer className="flex justify-between items-center p-5 bg-black border-t-2 border-black">
-        <div className="text-left text-white">
+    <footer className="flex flex-col md:flex-row justify-between items-center p-5 bg-black border-t-2 border-black space-y-4 md:space-y-0">
+        <div className="text-center md:text-left text-white">
             <h1 className="text-2xl font-bold">LA MORENITA</h1>
             <p className="italic">¡El auténtico sabor de Baures!</p>
         </div>
         
-        <div className="text-center flex-grow text-white">
+        <div className="text-center text-white flex-grow md:mx-4">
             <p>© Copyright 2024 LA MORENITA Todos los derechos reservados | Trinidad - Bolivia.</p>
         </div>
         
-        <div className="flex gap-2 text-white">
+        <div className="flex justify-center md:justify-end gap-2 text-white">
             <a href="#" className="social-icon"><FontAwesomeIcon icon={faFacebookF} className="text-orange-500 text-xl transition-colors duration-300 hover:text-orange-300" /></a>
             <a href="#" className="social-icon"><FontAwesomeIcon icon={faYoutube} className="text-orange-500 text-xl transition-colors duration-300 hover:text-orange-300" /></a>
             <a href="#" className="social-icon"><FontAwesomeIcon icon={faInstagram} className="text-orange-500 text-xl transition-colors duration-300 hover:text-orange-300" /></a>

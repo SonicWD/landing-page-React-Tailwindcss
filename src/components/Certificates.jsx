@@ -4,7 +4,7 @@ import CertificateItem from './CertificateItem';
 
 const Certificates = () => {
     return (
-        <footer className="flex justify-around items-stretch bg-gray-900 py-5 border-t-4 border-b-4 border-black">
+        <footer className="flex flex-wrap justify-center md:justify-around items-stretch bg-gray-900 py-5 border-t-4 border-b-4 border-black">
             {/* Certificado 1 */}
             <CertificateItem
                 imageUrl="https://hidegar.com/wp-content/uploads/2019/02/ISO-9001.png"
