@@ -70,12 +70,12 @@ const News = () => {
         {/* Panel inferior con imágenes */}
         <div className="w-full flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 flex flex-col">
-            <ImageWithHoverText src="/src/images/news/news1.jpg" alt="Imagen 1" text="Del árbol" />
-            <ImageWithHoverText src="/src/images/news/news2.jpg" alt="Imagen 2" text="a tu paladar" />
+            <ImageWithHoverText src="/images/news/news1.jpg" alt="Imagen 1" text="Del árbol" />
+            <ImageWithHoverText src="/images/news/news2.jpg" alt="Imagen 2" text="a tu paladar" />
           </div>
           <div className="w-full md:w-1/2 flex flex-col">
-            <ImageWithHoverText src="/src/images/news/news3.jpg" alt="Imagen 3" text="todo hecho a mano" />
-            <ImageWithHoverText src="/src/images/news/news4.jpg" alt="Imagen 4" text="y con amor" />
+            <ImageWithHoverText src="/images/news/news3.jpg" alt="Imagen 3" text="todo hecho a mano" />
+            <ImageWithHoverText src="/images/news/news4.jpg" alt="Imagen 4" text="y con amor" />
           </div>
         </div>
       </div>
@@ -85,12 +85,12 @@ const News = () => {
         {/* Panel izquierdo con imágenes */}
         <div className="w-1/2 flex flex-col">
           <div className="w-full h-1/2 flex">
-            <ImageWithHoverText src="/src/images/news/news1.jpg" alt="Imagen 1" text="Del árbol" />
-            <ImageWithHoverText src="/src/images/news/news2.jpg" alt="Imagen 2" text="a tu paladar" />
+            <ImageWithHoverText src="/images/news/news1.jpg" alt="Imagen 1" text="Del árbol" />
+            <ImageWithHoverText src="/images/news/news2.jpg" alt="Imagen 2" text="a tu paladar" />
           </div>
           <div className="w-full h-1/2 flex">
-            <ImageWithHoverText src="/src/images/news/news3.jpg" alt="Imagen 3" text="todo hecho a mano" />
-            <ImageWithHoverText src="/src/images/news/news4.jpg" alt="Imagen 4" text="y con amor" />
+            <ImageWithHoverText src="/images/news/news3.jpg" alt="Imagen 3" text="todo hecho a mano" />
+            <ImageWithHoverText src="/images/news/news4.jpg" alt="Imagen 4" text="y con amor" />
           </div>
         </div>
 

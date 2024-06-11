@@ -56,14 +56,14 @@ const MySlider = () => {
 
   const slidesData = [
     {
-      imageSrc: "/src/images/slider/slider3.jpg",
+      imageSrc: "/images/slider/slider3.jpg",
       alt: "Slide 1",
       text1: "El sabor más puro",
       text2: "los ingredientes más",
       text3: "selectos",
     },
     {
-      imageSrc: "/src/images/slider/slider2.jpg",
+      imageSrc: "/images/slider/slider2.jpg",
       alt: "Slide 2",
       text1: "Ingredientes naturales",
       text2: "sabor excepcional",
