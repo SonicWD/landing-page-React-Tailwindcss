@@ -1,12 +1,12 @@
 {
   "name": "landing-page",
   "private": true,
-  "homepage":"sonicwd.github.io/landing-page-React-Tailwindcss",
+  "homepage": "sonicwd.github.io/landing-page-React-Tailwindcss",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -17,6 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@react-google-maps/api": "^2.19.3",
+    "dotenv": "^16.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scroll": "^1.9.0",

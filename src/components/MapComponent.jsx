@@ -1,5 +1,7 @@
 // MapComponent.jsx
 // eslint-disable-next-line no-unused-vars
+// MapComponent.jsx
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from 'react';
 
 const MapComponent = () => {
@@ -18,7 +20,8 @@ const MapComponent = () => {
 
     // Cargar la API de Google Maps
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBk8w2X-Y2SRrkms5a3u9BxjwvzA4_OqYQ&callback=initMap`;
+    const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
     script.defer = true;
     window.initMap = initMap; // Hacer que la función initMap esté disponible globalmente
     document.head.appendChild(script);
